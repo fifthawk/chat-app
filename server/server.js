@@ -1,13 +1,20 @@
+import cors from "cors";
 const httpServer = require("http").createServer();
 const io = require("socket.io")(httpServer, {
   cors: {
     origin: "*",
-    methods: ["GET", "POST"],
-    AccessControlAllowOrigin: "https://chat-app-eight-green.vercel.app/"
+    handlePreflightRequesr: (req, res) => {
+      res.writeHead(200, {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST",
+        "Access-Control-Allow-Credentials": true
+
+      });
+      res.end();
+    }
+   
   },
 });
-
-
 
 io.on("connection", (socket) => {
   const id = socket.handshake.query.id;
