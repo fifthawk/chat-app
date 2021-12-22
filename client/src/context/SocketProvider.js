@@ -11,7 +11,7 @@ export function SocketProvider({ id, children }) {
   const [socket, setSocket] = useState();
 
   useEffect(() => {
-    const newSocket = io("http://localhost:4000", { query: { id } });
+    const newSocket = io("http://chat-app-eight-green.vercel.app/", { query: { id } });
     setSocket(newSocket);
 
     return () => newSocket.close();
