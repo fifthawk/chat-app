@@ -1,7 +1,7 @@
 const httpServer = require("http").createServer();
 const options = { 
     cors: true,
-    origin: "https://chat-app-eight-green.vercel.app/",
+    origin: "http://chat-app-eight-green.vercel.app/",
     methods: ["GET", "POST"]
 
 }
