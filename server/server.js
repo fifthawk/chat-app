@@ -2,8 +2,7 @@ const httpServer = require("http").createServer();
 const io = require("socket.io")(httpServer, {
   cors: {
     origin: "*",
-    methods: ["GET", "POST"],
-    credentials: true,
+    methods: ["GET", "POST"]
   },
 });
 
