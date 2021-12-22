@@ -11,7 +11,7 @@ export function SocketProvider({ id, children }) {
   const [socket, setSocket] = useState();
 
   useEffect(() => {
-    const newSocket = io(`https://136.37.11.120:4000`, { query: { id } });
+    const newSocket = io("http://localhost:4000", { query: { id } });
     setSocket(newSocket);
 
     return () => newSocket.close();
