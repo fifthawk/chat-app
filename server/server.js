@@ -2,7 +2,8 @@ const httpServer = require("http").createServer();
 const io = require("socket.io")(httpServer, {
   cors: {
     origin: "https://chat-app-eight-green.vercel.app/",
-    methods: ["GET", "POST"]
+    methods: ["GET", "POST"],
+    AccessControlAllowOrigin: "https://chat-app-eight-green.vercel.app/"
   },
 });
 
