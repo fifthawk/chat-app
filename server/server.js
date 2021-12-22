@@ -1,4 +1,4 @@
-import cors from "cors";
+const cors = require('cors')
 const httpServer = require("http").createServer();
 const io = require("socket.io")(httpServer, {
   cors: {
